@@ -44,7 +44,7 @@ fees-portal/
 ├── index.html              # Landing page
 └── README.md               # Project documentation
 
-
+📁 Project Structure
 
 📌 Future Improvements (Suggestions)
 Add online payment integration (like Razorpay or Stripe)
@@ -86,11 +86,3 @@ Edit
 
 Let me know if you'd like the SQL file or a working demo page added.
 
-
-
-
-
-
-
-
-Ask ChatGPT
