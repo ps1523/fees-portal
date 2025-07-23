@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Fee Structure Portal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduFee Portal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" id="homeBtn">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="javascript:void(0);" class="nav-link" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </a>
+                <a href="javascript:void(0);" class="nav-link" id="wishlistBtn">
+                    <i class="fas fa-heart"></i>
+                    Wishlist <span class="wishlist-badge" id="wishlistCount">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="hero">
+                <h1><i class="fas fa-university"></i> Find Your Perfect College</h1>
+                <p>Compare fee structures and make informed decisions about your future</p>
+            </div>
+
+            <!-- Search Bar Only -->
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search colleges by name, location, or type...">
+                </div>
+            </div>
+
+            <!-- Colleges Grid -->
+            <div class="colleges-grid" id="collegesGrid">
+                <!-- Colleges will be populated by JavaScript -->
+            </div>
+
+            <!-- Load More Button (optional, if you want to keep it) -->
+            <div class="load-more-section" id="loadMoreBtn" style="display: none;">
+                <button class="btn btn-outline">
+                    <i class="fas fa-plus"></i> Load More Colleges
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure Modal -->
+    <div id="collegeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartEmpty" class="empty-state" style="display:none;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Your cart is empty</h3>
+                    <p>Add colleges to your cart to compare fees.</p>
+                </div>
+                <div id="cartContent">
+                    <div id="cartItems" class="cart-items"></div>
+                    <div id="cartTotal"></div>
+                    <button class="btn btn-outline" id="clearCartBtn">
+                        <i class="fas fa-trash"></i> Clear Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Wishlist</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="wishlistItems" class="wishlist-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> EduFee Portal</h3>
+                    <p>Your trusted partner in finding the perfect college with transparent fee structures.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                        <li><a href="#cart" onclick="showSection('cart')">Cart</a></li>
+                        <li><a href="#wishlist" onclick="showSection('wishlist')">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> prabhashankark2003@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8754041512</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ps production. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/data.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/wishlist.js"></script>
+</body>
+</html>
